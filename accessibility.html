@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Accessibility | Dune Runner Electric Lawn Care</title>
+<meta name="description" content="Dune Runner Electric Lawn Care is committed to keeping its website usable for everyone, aiming for WCAG 2.1 AA.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://dunerunnerlawns.com/accessibility.html">
+<link rel="icon" href="favicon/favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32.png">
+<link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon-180.png">
+<meta name="theme-color" content="#0A1626">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Barlow:wght@500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{--blue:#0077A8;--gold:#9A7416;--gulf:#0A4670;--abyss:#0A1626;--ground:#F8F5EF;--ink:#1c2630;--gray:#5b5b5b}
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{font-family:'Barlow',sans-serif;background:var(--ground);color:var(--ink);line-height:1.65}
+  .skip{position:absolute;left:-9999px;top:0;background:var(--gulf);color:#fff;padding:12px 18px;font-weight:700;text-decoration:none}
+  .skip:focus{left:0;z-index:10}
+  a{color:var(--blue)}
+  a:focus-visible{outline:3px solid var(--blue);outline-offset:3px;border-radius:4px}
+  header{background:#fff;border-bottom:1px solid rgba(13,24,40,.10)}
+  header .bar{max-width:820px;margin:0 auto;padding:18px 24px;display:flex;align-items:center;justify-content:space-between;gap:16px}
+  .logo{display:flex;flex-direction:column;line-height:.95;text-decoration:none}
+  .logo b{color:var(--blue);font-weight:800;font-size:22px}
+  .logo span{color:var(--gold);font-weight:600;font-size:11px;letter-spacing:.02em;margin-top:3px}
+  header nav a{color:var(--gray);text-decoration:none;font-weight:600;font-size:14.5px}
+  main{max-width:820px;margin:0 auto;padding:44px 24px 12px}
+  h1{font-size:clamp(30px,5vw,40px);font-weight:800;color:#0d1828;line-height:1.08}
+  .updated{color:var(--gray);font-weight:600;font-size:14.5px;margin-top:8px}
+  h2{font-size:22px;font-weight:700;color:var(--gulf);margin-top:34px}
+  p,li{font-size:16.5px;margin-top:12px}
+  ul{margin-top:10px;padding-left:22px}
+  li{margin-top:6px}
+  strong{font-weight:700}
+  .ph{background:#fdf3d8;border-bottom:1px dashed var(--gold);padding:0 3px;border-radius:2px}
+  footer{max-width:820px;margin:32px auto 0;padding:22px 24px 48px;border-top:1px solid rgba(13,24,40,.12);
+         color:var(--gray);font-size:14.5px;display:flex;flex-wrap:wrap;gap:10px 18px;justify-content:space-between}
+  footer a{text-decoration:none;font-weight:600}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header>
+  <div class="bar">
+    <a class="logo" href="index.html"><b>Dune Runner</b><span>Electric Lawn Care</span></a>
+    <nav><a href="index.html">Back to site</a></nav>
+  </div>
+</header>
+
+<main id="main">
+  <h1>Accessibility</h1>
+  <div class="updated">Last updated: June 22, 2026</div>
+
+  <p>Dune Runner Electric Lawn Care wants its website to be usable by everyone, including people who use
+  screen readers, keyboard navigation, or other assistive technology. We aim to meet the Web Content
+  Accessibility Guidelines (WCAG) 2.1, Level AA, as a practical standard.</p>
+
+  <h2>What we do</h2>
+  <ul>
+    <li>Write meaningful alternative text for images that carry information.</li>
+    <li>Keep the site usable with a keyboard alone, with a visible focus outline and a skip-to-content link.</li>
+    <li>Label form fields clearly and tie labels to their inputs.</li>
+    <li>Maintain readable color contrast between text and its background.</li>
+    <li>Use real, structured text and headings rather than text baked into images.</li>
+  </ul>
+
+  <h2>Ongoing effort</h2>
+  <p>Accessibility is a continuing effort, not a one-time checkbox. We review new content and features for
+  these basics as the site grows, and we welcome feedback that helps us improve. We do not use a third-party
+  accessibility overlay widget; we prefer to build accessibility into the site itself.</p>
+
+  <h2>Tell us about a problem</h2>
+  <p>If you have trouble using any part of this site, or you need information in a different format, please
+  contact us and we will help and work to fix it:</p>
+  <p>Email: quotes@dunerunnerlawns.com<br>
+  Phone: (904) 555-0123 <span class="ph">[placeholder until the real number is live]</span></p>
+  <p>Please tell us the page, what you were trying to do, and the assistive technology or browser you were
+  using, so we can reproduce and resolve the issue.</p>
+</main>
+
+<footer>
+  <div>&copy; 2026 Dune Runner Electric Lawn Care</div>
+  <div><a href="index.html">Home</a> &middot; <a href="privacy.html">Privacy</a> &middot; <a href="terms.html">Terms</a></div>
+</footer>
+</body>
+</html>

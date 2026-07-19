@@ -1,0 +1,1478 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<!-- ===================== SEO + SHARING PLUMBING (added 2026-06-22) =====================
+     NAP is byte-identical to the canonical business name "Dune Runner Electric Lawn Care".
+     Every phone number on this site is the PLACEHOLDER (904) 555-0123 until the real Twilio
+     number exists. All absolute URLs assume the production deploy at https://dunerunnerlawns.com/.
+     No em dashes anywhere. -->
+<title>Electric Lawn Care at the Jacksonville Beaches | Dune Runner</title>
+<meta name="description" content="Quiet, all-electric lawn care for small beach lawns in Atlantic Beach, Neptune Beach, and Jacksonville Beach. Owner-operated. Get an instant quote.">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<link rel="canonical" href="https://dunerunnerlawns.com/">
+<meta name="theme-color" content="#0A1626">
+<meta name="author" content="Dune Runner Electric Lawn Care">
+
+<!-- Open Graph (Facebook, iMessage, LinkedIn, Slack, etc.) -->
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Dune Runner Electric Lawn Care">
+<meta property="og:title" content="Dune Runner | Electric Lawn Care for the Beaches">
+<meta property="og:description" content="Quiet, all-electric lawn care for small beach lawns in Atlantic Beach, Neptune Beach, and Jacksonville Beach. Owner-operated.">
+<meta property="og:url" content="https://dunerunnerlawns.com/">
+<meta property="og:image" content="https://dunerunnerlawns.com/website-assets/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Dune Runner Electric Lawn Care: a quiet lawn, beautifully kept, for the Jacksonville beaches">
+<meta property="og:locale" content="en_US">
+
+<!-- Twitter / X share card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Dune Runner | Electric Lawn Care for the Beaches">
+<meta name="twitter:description" content="Quiet, all-electric lawn care for small beach lawns in Atlantic Beach, Neptune Beach, and Jacksonville Beach.">
+<meta name="twitter:image" content="https://dunerunnerlawns.com/website-assets/og-image.png">
+<meta name="twitter:image:alt" content="Dune Runner Electric Lawn Care: a quiet lawn, beautifully kept">
+
+<!-- Favicon + touch icon (assets already live in /favicon/) -->
+<link rel="icon" href="favicon/favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16.png">
+<link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon-180.png">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Barlow:wght@500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --white:#FFFFFF;
+    --shore:#CDD2DE;
+    --foam:#B7C3CC;
+    --shallow:#5E94B5;
+    --gulf:#0A4670;
+    --abyss:#0A1626;
+    --blue:#0077A8;
+    --gold:#9A7416;
+    --tan:#C8A96E;
+    --gray:#6E6E6E;
+    --secpad:48px;   /* one knob for the section vertical rhythm (compact) */
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth;background:var(--abyss)}  /* gutter beyond the page cap on wide monitors: deep brand abyss, page floats as one sheet */
+  body{font-family:'Barlow',sans-serif;background:var(--white);color:#1c2630;
+       max-width:1600px;margin:0 auto;box-shadow:0 0 60px rgba(0,0,0,.18)}  /* page caps at 1600px and floats on ultrawide */
+
+  section{position:relative}
+  .inner{max-width:1080px;margin:0 auto;padding:0 24px;position:relative}
+
+  /* STRAIGHT SEAMS, sharp edge + thin dark shadow (2026-06-15, Kevin's recipe).
+     No raster strips, no dragged-out gradients. Each section boundary reads as a crisp dark cut
+     line with ONE thin, dark, tight shadow right under it. */
+  /* PROGRESSIVE DEPTH: each cut deepens as the sheets descend into darker blues.
+     The hero -> photo transition is intentionally a clean cut (a photo is not paper). */
+  .area{      /* decibel stage -> map sheet, paper to paper, a touch deeper (2026-07-01: the decibel
+                 duel section now carries the tesla-photo -> first-paper-sheet cut) */
+    box-shadow:
+      inset 0 1px 0 rgba(255,255,255,.16),
+      inset 0 2px 1px -1px rgba(0,0,0,.46),
+      inset 0 8px 9px -4px rgba(0,0,0,.54);
+  }
+  .services{  /* map -> sky-blue sheet, a touch deeper */
+    box-shadow:
+      inset 0 1px 0 rgba(255,255,255,.17),
+      inset 0 2px 1px -1px rgba(0,0,0,.5),
+      inset 0 9px 11px -5px rgba(0,0,0,.58);
+  }
+  .about{     /* sky -> deep-blue sheet, deeper still */
+    box-shadow:
+      inset 0 1px 0 rgba(255,255,255,.2),
+      inset 0 2px 1px -1px rgba(0,0,0,.56),
+      inset 0 12px 14px -6px rgba(0,0,0,.66);
+  }
+  .quote{     /* deep blue -> abyss, the deepest cut (no lit edge; color step + shadow carry it) */
+    box-shadow:
+      inset 0 2px 1px -1px rgba(0,0,0,.6),
+      inset 0 16px 18px -7px rgba(0,0,0,.72);
+  }
+
+  /* LAYER 1: HERO */
+  .hero{background:var(--white)}
+  /* Mobile/base: copy then form stacked and grouped, vertically centered in the tall hero. The form
+     is now a sibling of .hero-copy (item 8), so centering is done here with justify-content instead
+     of the copy's old margin:auto trick, which would otherwise shove the form to the bottom. */
+  .hero .inner{min-height:clamp(440px,56vh,600px);display:flex;flex-direction:column;justify-content:center}  /* proportional to the screen but bounded so it never gets cavernous or cramped */
+  nav{display:flex;justify-content:space-between;align-items:center;padding:22px 0}
+  .logo{display:flex;flex-direction:column;line-height:.95}
+  .logo b{color:var(--blue);font-weight:800;font-size:31px}  /* modest bump from 26px, confident not oversized */
+  .logo span{color:var(--gold);font-weight:600;font-size:13.5px;letter-spacing:.02em;margin-top:5px;margin-left:1px}  /* scaled up + nudged 1px right to optically align under the wordmark */
+  nav .links{display:flex;gap:28px}
+  nav .links a{color:var(--gray);text-decoration:none;font-weight:500;font-size:15px}
+  .hero-copy{max-width:640px}  /* centered as a group by .hero .inner's justify-content (item 8) */
+  h1{font-size:clamp(38px,6.5vw,58px);font-weight:800;color:#0d1828;line-height:1.05}
+  .hero-copy p{margin-top:22px;font-size:18px;color:var(--gray);line-height:1.55;max-width:480px}
+  .cta{display:inline-block;margin-top:32px;background:var(--blue);color:#fff;font-weight:700;
+       font-size:17px;text-decoration:none;padding:15px 30px;border-radius:7px}
+  .cta:hover{background:#00638c}
+
+  /* LAYER 1b: TESLA SHOWCASE, full-bleed photo on the white first sheet, straight edges. */
+  .tesla{position:relative;overflow:hidden;aspect-ratio:12/5;
+         background:#15242e url('website-assets/tesla-showcase.webp') no-repeat center center;background-size:cover}
+  .tesla-scrim{position:absolute;inset:0;z-index:1;
+     background:linear-gradient(90deg,rgba(8,13,17,.76) 0%,rgba(8,13,17,.62) 16%,
+       rgba(8,13,17,.34) 36%,rgba(8,13,17,0) 55%)}
+  .tesla-text{position:absolute;inset:0;z-index:3;display:flex;align-items:center;pointer-events:none}
+  .tesla-text .inner{width:100%}
+  .tesla-text .kicker{color:#D8B878;font-weight:600;font-size:15.5px;letter-spacing:.16em}
+  .tesla-head{color:#fff;font-weight:800;font-size:clamp(38px,6.2vw,70px);line-height:1.04;
+              margin-top:16px;text-shadow:0 2px 22px rgba(0,0,0,.34)}
+  .tesla-mobile{display:none}
+  @media(max-width:720px){
+    .tesla{aspect-ratio:auto;background:#11202b}
+    .tesla-scrim{display:none}
+    .tesla-mobile{display:block;width:100%;height:auto}
+    .tesla-text{position:static;display:block;padding:24px 0 24px}
+    .tesla-text .kicker{font-size:13.5px}
+    .tesla-head{font-size:clamp(34px,9vw,46px)}
+  }
+
+  .kicker{font-weight:700;font-size:14px;letter-spacing:.08em}
+  h2{font-size:clamp(28px,4.5vw,38px);font-weight:800;margin-top:8px}
+
+  /* Desktop-only manual line break: collapses to a normal space on mobile so narrow widths keep
+     their natural wrap, and takes effect from the site's existing 641px breakpoint on up, where
+     Kevin's hand-tuned break points read well. (2026-07-03, items 9 + 10) */
+  .lb{display:none}
+  @media(min-width:641px){.lb{display:inline}}
+  /* Inverse of .lb: a line break that exists ONLY on mobile (<=640), for microcopy that should
+     wrap to a second line on a phone but stay one line on desktop. (2026-07-05, mobile premium pass) */
+  .mbr{display:none}
+  @media(max-width:640px){.mbr{display:inline}}
+  /* Services cards only: these hand-tuned breaks were designed against a wider container and
+     leaked into a bad rag at 768 (fix, 2026-07-03, Fable 5 review). Same idea as .lb, higher
+     floor, scoped so it does not touch any other section's breaks. */
+  .lb-wide{display:none}
+  @media(min-width:1024px){.lb-wide{display:inline}}
+  /* Inverse of .lb, area note only: that stanza has no punctuation, so when its breaks collapse
+     on mobile the three lines run together ("purposeFrom", "southTight"). These sentence dots
+     exist ONLY below the same 641px breakpoint; desktop keeps the exact stanza it has today.
+     (fix 2026-07-04, found in the 390px map-install verify) */
+  .lb-dot{display:none}
+  @media(max-width:640px){.lb-dot{display:inline}}
+
+  /* Middle sections: equal height, content vertically centered */
+  .about .inner,.services .inner,.area .inner{
+    display:flex;flex-direction:column;justify-content:center;
+    min-height:0;padding-top:var(--secpad);padding-bottom:var(--secpad)}
+
+  /* SERVICE AREA: a foam sheet with the coast as a FREE-FLOATING transparent cut-paper shape.
+     coast-art.webp is the map with all of its paper (mainland west of the Intracoastal, and
+     everything north of the St. Johns) deleted to alpha. The removed paper was this exact foam
+     color, so on a --foam section it reads like the old edge-to-edge map, except the coast is now
+     a transparent shape, free to resize.
+     --coast-h is the one knob: the section's vertical space. The coast FILLS it (and bleeds a few px
+     past the top and bottom, clipped) so it reads edge-to-edge and rescales whenever the height does. */
+  .area{background:#8AACC0;overflow:hidden;--coast-h:clamp(460px,42vw,580px)}  /* 2026-07-03: mid-step between the Duel's new foam-level blue and Services' shallow blue, the mathematical midpoint of the two so the abyss descent reads as one even ramp instead of two sheets at the same tone; see v2-merge-checklist.md */
+  .area .inner{display:flex;flex-direction:column;justify-content:center;
+               min-height:var(--coast-h);padding-top:44px;padding-bottom:44px;position:relative;z-index:2}
+  .area-copy{max-width:600px}  /* widened so the 3 active cities fit on one line; the .brk drops Mayport + Ponte Vedra to line 2. Coast is ~360px on the right, so no collision. */
+  /* the coast is a sibling of .inner so it positions against the FULL section and bleeds to every edge:
+     to the right, and a few px past the top and bottom seams (clipped by overflow:hidden) so it is flush
+     top-to-bottom and tracks the section height exactly. display:contents lets the <img> be the child. */
+  .area picture{display:contents}
+  .area-map{position:absolute;right:0;top:50%;transform:translateY(-50%);
+            height:calc(100% + 14px);width:auto;display:block;z-index:1;pointer-events:none}
+  .beaches .brk{flex-basis:100%;height:0}
+  .area .kicker{color:#27323d}
+  .area h2{color:#0d1828}
+  .beaches{display:flex;flex-wrap:wrap;gap:10px;margin-top:30px}
+  .beach{display:flex;align-items:center;gap:8px;background:rgba(255,255,255,.55);
+         border:1px solid rgba(13,24,40,.18);color:#27323d;font-weight:600;font-size:15px;
+         padding:10px 18px;border-radius:999px;white-space:nowrap}
+  .beach .dot{width:10px;height:10px;border-radius:50%;display:inline-block}
+  .beach.soon{opacity:.55;font-weight:500}
+  .area p.note{margin-top:26px;color:#27323d;font-size:16.5px;line-height:1.6}  /* matched to the city-chip dark slate (was the lighter #3e4b56) */
+  /* Below ~980px there is no room to float the coast beside the copy, so it stacks under it.
+     Kevin 2026-07-04: FULL BLEED, flush with the section bottom: the framed map spans edge to
+     edge with no section blue beside or below it, so the next seam sits right on the map's
+     bottom edge. Width tracks the screen, so it stays seamless at every size. */
+  @media(max-width:980px){
+    .area{overflow:visible;padding-bottom:0}
+    .area .inner{min-height:0;padding-top:40px;padding-bottom:40px}
+    .area-copy{max-width:100%}
+    .area-map{position:static;transform:none;height:auto;width:100%;margin:28px 0 0}
+  }
+
+  /* ABOUT on the deep blue sheet (gulf), text left, photo right */
+  .about{background:var(--gulf)}
+  .about .kicker{color:#eaf2f7}
+  .about h2{color:#fff}
+  .about-grid{display:grid;grid-template-columns:1fr 360px;gap:40px;align-items:start}
+  .about-grid img.photo{width:100%;border-radius:12px;display:block;justify-self:end;margin-top:28px}
+  .about p{margin-top:14px;font-size:17px;color:#eef5f9;line-height:1.7}
+  /* Roughly doubled from 170px (2026-07-03) to read as a real signature flourish. Text column is
+     ~632px usable (1fr of 1fr/360px inside the 1080px .inner), so 330px sits comfortably clear of
+     the h2 above and the column's right edge. Mobile cap is set in the 720px block below. */
+  .signature{width:330px;max-width:100%;height:auto;display:block;margin-top:20px}
+  .chips{display:flex;flex-wrap:wrap;gap:12px;margin-top:20px}
+  .chip{background:rgba(255,255,255,.18);border:1px solid rgba(255,255,255,.38);color:#fff;
+        font-weight:600;font-size:14.5px;padding:10px 18px;border-radius:999px}
+  .about .trust{margin-top:20px;font-size:14.5px;color:#cfe0ec;line-height:1.55;max-width:540px}
+  /* Gold pull-quote bar removed here (2026-07-06, Kevin): it sat right above the gold signature and
+     the two gold gestures competed. The line stays emphasized by weight/color + the signature below
+     it; the bar treatment is kept on .how .promise, where it is the lone accent on that line. */
+  .about .guarantee{margin-top:14px;
+                    color:#fff;font-weight:600;font-size:16px;line-height:1.45;max-width:540px}
+  @media(min-width:901px){
+    .about .inner{padding-top:72px;padding-bottom:72px}
+    .about-grid{gap:56px;align-items:center}
+    .about-grid img.photo{margin-top:0}
+    .about p{margin-top:20px}
+    .chips{gap:14px;margin-top:26px}
+    .about .trust{margin-top:28px}
+    .about .guarantee{margin-top:22px}
+    .signature{margin-top:24px}
+  }
+  @media(max-width:900px){.about-grid{grid-template-columns:1fr}
+    .about-grid img.photo{order:-1;max-width:min(100%,420px);justify-self:center;margin:0 0 24px}
+    .signature{width:220px}}  /* keep it a signature, not a headline, on a narrow phone (2026-07-03);
+    raised from 720 to 900 (Fable 5 review) so the two-column band never squeezes the text column
+    narrower than the fixed photo track; photo now leads on mobile instead of trailing the
+    signature, full-width and centered instead of an accidental-looking left inset. */
+
+  /* LAYER: SERVICES on the sky blue sheet (shallow), text flipped light */
+  .services{background:var(--shallow)}
+  .services .kicker{color:#eaf2f7}
+  .services h2{color:#fff}
+  .services .inner{padding-top:76px;padding-bottom:76px}  /* roomy; this section earns its space */
+  .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:38px}
+  .card .n{display:flex;align-items:center;justify-content:center;width:42px;height:42px;
+        border-radius:50%;background:rgba(255,255,255,.16);border:1px solid rgba(255,255,255,.42);
+        color:#fff;font-weight:800;font-size:18px}
+  .card h3{color:#fff;font-size:19px;font-weight:700;margin-top:16px}
+  .card p{margin-top:8px;font-size:15.5px;color:#fff;line-height:1.55}
+  @media(max-width:720px){.cards{grid-template-columns:1fr;gap:26px}}
+
+  /* LAYER 6: ABYSS */
+  .quote{background:var(--abyss)}
+  .quote .inner{padding-top:68px;padding-bottom:24px;text-align:center}  /* abyss expanded above the heading */
+  .quote h2{color:#fff}
+  .quote p{color:#aebdc9;margin:18px auto 0;font-size:16.5px;max-width:520px;line-height:1.6}
+  .quote .cta{margin-top:30px;font-size:18px;padding:16px 36px}
+  footer{border-top:1px solid rgba(255,255,255,.12);margin-top:72px;padding:24px 0 28px;
+         display:flex;flex-wrap:wrap;gap:14px;justify-content:space-between;align-items:center}
+  footer .f-brand{color:var(--tan);font-weight:700}
+  footer .f-cities{color:var(--tan);font-weight:600;font-size:14.5px}
+  footer .f-legal{color:var(--tan);font-size:14.5px}
+
+  @media(max-width:640px){
+    nav .links{display:none}
+    /* Dynamic-island cushion (2026-07-05, bumped per Kevin): extend the white sticky header down by
+       the device safe-area inset plus a larger fixed cushion so the wordmark clears the iPhone
+       notch/island with room to breathe (the safe-area inset is not always applied in-browser, so
+       the fixed part carries the spacing on its own). */
+    .site-nav{padding-top:calc(env(safe-area-inset-top, 0px) + 30px)}
+    /* Hero (2026-07-05): the quote card was flush against the trust seam. Give the hero balanced
+       vertical padding on a phone so the card sits with even space above (from the subhead) and
+       below (to the next section), instead of centering a group that overflows the min-height. */
+    .hero .inner{min-height:auto;padding-top:34px;padding-bottom:30px}
+    .hero-copy{padding:0}
+    /* Footer premium pass (2026-07-05): centered + stacked on a phone. Each block takes a full row,
+       "Jacksonville Beach" drops to its own line, and the phone sits on its own line under the
+       credentials. Desktop (>640) is untouched. */
+    footer{justify-content:center;text-align:center;gap:12px}
+    footer .f-brand,footer .f-cities,footer .f-legal{flex-basis:100%;text-align:center}
+    footer .f-cities .fc-line{display:block}
+    footer .f-cities .fc-mid{display:none}
+    footer .f-legal .fl-item{display:block}
+    footer .f-legal .fl-pipe{display:none}
+  }
+
+  /* ============================= ADDITIVE PLUMBING (2026-06-22) =============================
+     New sections woven INTO the locked descent. Everything above (palette, hero, tesla, area,
+     services, about, quote, the seams, the 1600px cap, the dev tools) is byte-untouched. New
+     deep sheets reuse the established straight-seam inset recipe, deepening monotonically, and
+     pick a background that keeps the light-to-abyss descent monotonic. No em dashes anywhere. */
+
+  /* Accessibility: keyboard skip link (only visible on focus) + a clear focus ring everywhere. */
+  .skip{position:absolute;left:-9999px;top:0;z-index:100;background:var(--gulf);color:#fff;
+        padding:12px 18px;border-radius:0 0 8px 0;font-weight:700;text-decoration:none;font-size:15px}
+  .skip:focus{left:0}
+  a:focus-visible,summary:focus-visible,.ba-handle:focus-visible{
+        outline:3px solid var(--blue);outline-offset:3px;border-radius:4px}
+
+  /* TRUST STRIP: slim white credibility band under the hero, before the Tesla beat. */
+  /* renamed from .trust to .trustbar so it does NOT collide with the pre-existing .about .trust paragraph */
+  .trustbar{background:var(--white);border-top:1px solid rgba(13,24,40,.10)}
+  .trustbar .inner{display:flex;flex-wrap:wrap;justify-content:center;align-items:center;
+                gap:13px 28px;padding:20px 24px}
+  .trustbar .ti{display:flex;align-items:center;gap:9px;font-weight:600;font-size:15px;color:#37434f;
+             white-space:nowrap}
+  .trustbar .ti .dot{width:7px;height:7px;border-radius:50%;background:var(--blue);flex:none}
+  .trustbar .ti.cred{color:#8E6B14}                 /* Wet Sand gold, nudged 3% darker so 15px text clears WCAG AA on white */
+  .trustbar .ti.cred .dot{background:var(--gold)}
+  .trustbar .sep{width:1px;height:18px;background:rgba(13,24,40,.14)}
+  @media(max-width:800px){.trustbar .sep{display:none}
+    .trustbar .inner{display:grid;grid-template-columns:1fr 1fr;gap:14px 20px;justify-items:center}}
+  /* Fix (2026-07-03, Fable 5 review): below 800 the old flex-wrap left "Replies Within 24 Hours"
+     stranded alone on its own centered row at 768, and mixed dot/hairline separators read messy.
+     A tidy 2x2 grid with dots only (hairlines dropped in this band) reads planned at any width. */
+  /* F3 (2026-07-05, mobile premium pass): at phone widths the 2x2 grid's nowrap columns
+     (~195px + ~172px + 20px gap = 387px) overflow the 24px inner padding, so
+     "Licensed · Insured · Bonded" touched the left edge (1px) and "Replies Within 24 Hours" the
+     right (389 of 390). Drop to a single centered column below 480 so every trust item keeps equal
+     side margins. Tablet 2x2 (481-800) and desktop are unchanged. */
+  @media(max-width:480px){
+    .trustbar .inner{grid-template-columns:1fr;gap:12px}
+  }
+  /* Trust-row icons (2026-07-05, Kevin): on phone/tablet (<=800, where the row stacks) the plain
+     blue dots read flat and uninteresting, so swap each for a small monoline icon (shield, owner,
+     house, clock). Desktop (>800) keeps the dots and its single-row layout, untouched. */
+  .ti-ico{display:none}
+  .ti-ico svg{width:19px;height:19px;display:block}
+  @media(max-width:800px){
+    .trustbar .ti .dot{display:none}
+    .trustbar .ti .ti-ico{display:inline-flex;color:var(--blue);flex:none}
+  }
+
+  /* HOW IT WORKS: deep sheet between Services (sky) and About (gulf). Light text. */
+  .how{background:#2F6C92;box-shadow:
+        inset 0 1px 0 rgba(255,255,255,.18),
+        inset 0 2px 1px -1px rgba(0,0,0,.53),
+        inset 0 10px 12px -5px rgba(0,0,0,.62)}
+  .how .inner{padding-top:64px;padding-bottom:64px}
+  .how .kicker{color:#eaf2f7}
+  .how h2{color:#fff}
+  .how .steps{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:38px}
+  .how .step .n{display:flex;align-items:center;justify-content:center;width:42px;height:42px;
+        border-radius:50%;background:rgba(255,255,255,.16);border:1px solid rgba(255,255,255,.42);
+        color:#fff;font-weight:800;font-size:18px}
+  .how .step h3{color:#fff;font-size:19px;font-weight:700;margin-top:16px}
+  .how .step p{color:#e7f0f6;font-size:15.5px;line-height:1.55;margin-top:8px}
+  .how .promise{margin-top:34px;border-left:3px solid var(--tan);padding-left:16px;
+        color:#fff;font-weight:600;font-size:16.5px;line-height:1.5;max-width:620px}
+  @media(min-width:721px){.how .promise{margin-top:50px}}
+  @media(max-width:720px){.how .steps{grid-template-columns:1fr;gap:26px}}
+
+  /* FAQ: deep sheet between About (gulf) and Quote (abyss). Native <details> = keyboard-accessible.
+     FAQ rich results were retired by Google (2026-05-07); content kept for users + AI answer engines. */
+  .faq{background:#06304E;box-shadow:
+        inset 0 1px 0 rgba(255,255,255,.18),
+        inset 0 2px 1px -1px rgba(0,0,0,.58),
+        inset 0 14px 16px -6px rgba(0,0,0,.69)}
+  .faq .inner{padding-top:64px;padding-bottom:64px}
+  .faq .kicker{color:#eaf2f7}
+  .faq h2{color:#fff}
+  .faq .list{margin-top:30px}
+  .faq details{border-top:1px solid rgba(255,255,255,.16)}
+  .faq details:last-child{border-bottom:1px solid rgba(255,255,255,.16)}
+  .faq summary{list-style:none;cursor:pointer;padding:20px 46px 20px 0;position:relative;
+        color:#fff;font-weight:600;font-size:17.5px;line-height:1.4}
+  .faq summary::-webkit-details-marker{display:none}
+  .faq summary::after{content:"+";position:absolute;right:6px;top:14px;font-size:26px;
+        font-weight:600;color:var(--tan);line-height:1}
+  .faq details[open] summary::after{content:"\2212"}   /* minus sign */
+  .faq .a{padding:0 46px 22px 0;color:#cfe0ec;font-size:16px;line-height:1.65;max-width:720px}
+  @media(max-width:640px){.faq summary{font-size:16.5px;padding-right:40px}.faq .a{padding-right:0}}
+  /* Smooth single-open: animate the open AND the auto-close so the swap reads as one motion, not two snaps.
+     Chromium (Kevin's Dia) animates this; other engines fall back to the instant snap, no breakage.
+     Tune the feel here: .3s is the open/close duration. */
+  .faq{interpolate-size:allow-keywords}
+  @media(prefers-reduced-motion:no-preference){
+    .faq details::details-content{
+      height:0;opacity:0;overflow:hidden;
+      transition:height .3s ease, opacity .25s ease, content-visibility .3s allow-discrete}
+    .faq details[open]::details-content{height:auto;opacity:1}
+  }
+
+  /* ===== HIDDEN DRAFT SECTIONS: Reviews + Before/After slider ==============================
+     ONE documented flag. Remove the class "hidden-draft" from a section's <section ...> tag to
+     PUBLISH it. Both are built and design-approved now; flip them on once real content exists
+     (real Google reviews; a real before/after photo pair). Publish steps in v2-merge-checklist.md. */
+  .hidden-draft{display:none !important}
+
+  /* Reviews (hidden until real Google reviews exist; all copy below is PLACEHOLDER). */
+  .reviews{background:var(--gulf)}
+  .reviews .inner{padding-top:64px;padding-bottom:64px}
+  .reviews .kicker{color:#eaf2f7}
+  .reviews h2{color:#fff}
+  .reviews .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:36px}
+  .reviews .rc{background:rgba(255,255,255,.10);border:1px solid rgba(255,255,255,.26);
+        border-radius:12px;padding:24px}
+  .reviews .stars{color:#E7C66B;font-size:16px;letter-spacing:2px}
+  .reviews .rc p{color:#eef5f9;font-size:15.5px;line-height:1.6;margin-top:14px}
+  .reviews .who{color:#bcd0e0;font-weight:600;font-size:14px;margin-top:16px}
+  @media(max-width:880px){.reviews .grid{grid-template-columns:1fr}}
+
+  /* Before/After slider (hidden until a real photo pair exists; uses two same-size placeholders).
+     Both images sit full-size in the frame; the AFTER image is clipped from the right by JS. */
+  .ba{background:#08395C;box-shadow:
+        inset 0 1px 0 rgba(255,255,255,.18),
+        inset 0 2px 1px -1px rgba(0,0,0,.56),
+        inset 0 12px 14px -6px rgba(0,0,0,.66)}
+  .ba .inner{padding-top:64px;padding-bottom:64px}
+  .ba .kicker{color:#eaf2f7}
+  .ba h2{color:#fff}
+  .ba-wrap{position:relative;margin-top:34px;border-radius:14px;overflow:hidden;aspect-ratio:3/2;
+        background:#0a1626;user-select:none;touch-action:pan-y;box-shadow:0 14px 40px rgba(0,0,0,.4)}
+  .ba-wrap img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;
+        pointer-events:none}
+  .ba-before{z-index:2}                /* sits on top; JS clips it from the right to wipe to AFTER */
+  .ba-tag{position:absolute;top:14px;z-index:3;font-weight:700;font-size:13px;letter-spacing:.04em;
+        color:#fff;background:rgba(10,22,38,.62);padding:6px 12px;border-radius:999px}
+  .ba-tag.before{left:14px}
+  .ba-tag.after{right:14px}
+  .ba-line{position:absolute;top:0;bottom:0;left:50%;width:3px;transform:translateX(-50%);z-index:4;
+        background:#fff;box-shadow:0 0 10px rgba(0,0,0,.5);pointer-events:none}
+  .ba-handle{position:absolute;top:0;bottom:0;left:50%;width:46px;transform:translateX(-50%);z-index:5;
+        cursor:ew-resize;background:transparent;border:0;padding:0}
+  .ba-knob{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:42px;height:42px;
+        border-radius:50%;background:#fff;box-shadow:0 3px 12px rgba(0,0,0,.45);display:flex;
+        align-items:center;justify-content:center;color:var(--gulf);font-weight:800;pointer-events:none}
+  .ba .hint{margin-top:16px;color:#bcd0e0;font-size:14.5px}
+
+  /* Footer legal links (Privacy, Terms, Accessibility), on their own row under the existing footer. */
+  footer .f-links{flex-basis:100%;text-align:center;margin-top:8px;order:9}
+  footer .f-links a{color:#8fa0ae;font-size:14px;text-decoration:none;margin:0 9px}
+  footer .f-links a:hover{color:#cfe0ec}
+
+  /* ============================= DESKTOP COMPLETION (2026-06-25) =============================
+     Brings the wide-viewport layout up to parity with the mobile source of truth:
+       1. a sticky brand header carrying the persistent, prominent path to a quote;
+       2. the ratified address-box conversion component (spec 4.1) in the hero and the final ask;
+       3. wide-screen breathing room past laptop width.
+     Mobile is preserved: the header is STATIC below the sticky breakpoint and the address row
+     stacks. The address box is a PRESENTATIONAL placeholder; the estimator lane wires real
+     behavior onto the [data-quote-component] / [data-address-input] / [data-quote-submit] hooks
+     (same contract as website-build/index.html). No em dashes anywhere. */
+
+  /* --- Sticky brand header ------------------------------------------------------------------ */
+  .site-nav{background:var(--white);z-index:50}
+  .site-nav nav{padding:18px 0}      /* slimmer than the in-hero nav, since it is now persistent */
+  .nav-right{display:flex;align-items:center;gap:26px}
+  .nav-call{color:var(--blue);font-weight:700;font-size:15px;text-decoration:none;white-space:nowrap}
+  /* Demoted from a filled button to a text link (2026-07-03, Fable 5 review + Kevin): a second
+     button matching the hero's exact style put two identical primary CTAs on screen together at
+     load. A quiet text link keeps a click-path here without competing with the hero's real button. */
+  .nav-cta{color:var(--blue);font-weight:700;font-size:15px;text-decoration:none;white-space:nowrap}
+  .nav-cta:hover{text-decoration:underline}
+  /* Sticky-on-scroll-up (2026-07-03, reverses the 2026-07-03-earlier-today non-sticky decision,
+     see v2-merge-checklist.md): position:sticky costs nothing at the top of the page, it sits in
+     normal flow exactly like position:relative did until the user actually scrolls past it. The
+     hide/show-on-scroll-direction behavior is JS-driven, near </body>. This restores a quote path
+     in the middle of the page (the report's real complaint) without reintroducing a second button
+     fighting the hero's at first paint, since nav-cta is text now, not a twin button. */
+  .site-nav{position:sticky;top:0;transition:transform .28s ease,box-shadow .28s ease}
+  .site-nav.nav-hide{transform:translateY(-100%)}
+  .site-nav.nav-scrolled{box-shadow:0 2px 14px rgba(13,24,40,.08)}
+  @media(max-width:640px){
+    .logo b{font-size:26px}
+  }
+  /* Below ~800px logo + links + CTA would crowd into two rows, so drop the section links and keep
+     the logo + the prominent CTA (it is a one-page scroll; the links are a convenience, not the path). */
+  @media(max-width:800px){.site-nav .links{display:none}}
+
+  /* --- Address-box conversion component (the page spine; appears in hero + final ask) -------- */
+  /* Styled as a Ground/white Paper Chip so the SAME component reads on the white hero and on the
+     abyss final section. Real, accessible, labeled input; submit is stubbed until the estimator
+     is wired (see the script near </body>, marked PLACEHOLDER). */
+  .qbox{background:#fff;border:1px solid rgba(13,24,40,.12);border-radius:14px;
+        box-shadow:0 12px 34px rgba(10,70,112,.14);padding:18px;max-width:524px;margin-top:30px}
+  .qbox .row{display:flex;gap:10px;align-items:flex-end}
+  .qbox .field{flex:1;min-width:0;text-align:left}
+  .qbox label{display:block;font-weight:600;font-size:13px;color:#37434f;margin-bottom:6px}
+  .qbox input{width:100%;font:500 16px 'Barlow',sans-serif;color:#1c2630;background:#fff;
+              padding:13px 14px;border:1px solid rgba(13,24,40,.22);border-radius:8px}
+  .qbox input::placeholder{color:#98a4ae}
+  .qbox input{transition:border-color .18s ease,box-shadow .18s ease}
+  .qbox input:focus{outline:none;border-color:var(--blue);box-shadow:0 0 0 4px rgba(0,119,168,.22)}
+  .qbox button{white-space:nowrap;background:var(--blue);color:#fff;font:700 16px 'Barlow',sans-serif;
+               border:0;border-radius:8px;padding:14px 22px;cursor:pointer;
+               transition:transform .16s ease,box-shadow .16s ease,background .16s ease}
+  .qbox button:hover{background:#00638c;transform:translateY(-2px);box-shadow:0 8px 18px rgba(0,70,112,.28)}
+  .qbox button:active{transform:translateY(0) scale(.97);box-shadow:0 2px 6px rgba(0,70,112,.22);transition-duration:.14s}
+  .qbox .micro{margin-top:11px;font-size:13.5px;color:var(--gray);text-align:center;line-height:1.35}
+  .qbox .micro + .micro{margin-top:4px}
+  .qbox .msg{margin-top:10px;font-size:14.5px;font-weight:600;color:var(--blue);text-align:center;
+             opacity:0;transform:translateY(5px);transition:opacity .28s ease,transform .28s ease}
+  .qbox .msg:empty{margin:0}
+  .qbox .msg.show{opacity:1;transform:translateY(0)}
+  @media(prefers-reduced-motion:reduce){
+    .qbox button:hover,.qbox button:active,
+    .nav-cta:hover,.nav-cta:active{transform:none}
+    .qbox .msg{transition:opacity .28s ease;transform:none}
+  }
+  @media(max-width:560px){.qbox .row{flex-direction:column;align-items:stretch}.qbox button{width:100%}}
+
+  /* Hero: the box carries the left column, so the open right reads as intentional Ground.
+     A larger display size commands the wide viewport (mobile keeps the 38px floor unchanged). */
+  .hero h1{font-size:clamp(38px,6.5vw,58px)}
+  .hero-copy{max-width:640px}
+  /* Final ask: the white Paper Chip centers on the abyss under the heading. */
+  .quote .qbox{margin-left:auto;margin-right:auto}
+
+  /* Hero two-column (item 8, 2026-07-03): copy left, address box right, from 900px up. Below this
+     the base flex-column rule keeps them stacked (copy, then form) exactly as before. The form
+     column is minmax(340px,440px) so it never gets wider than the copy at laptop widths; grid gap
+     handles the spacing that the form's own margin-top gave it when stacked, so that's zeroed. */
+  @media(min-width:900px){
+    .hero .inner{max-width:1180px;display:grid;grid-template-columns:1fr minmax(400px,540px);gap:56px;align-items:center}
+    .hero #get-quote{margin-top:0;width:100%}
+  }
+  /* Fix (2026-07-03, Fable 5 review): the 58px cap fights the narrowed two-column text track in
+     this band, orphaning "kept." onto its own line at 1024. Ride a gentler size until there's
+     room, full cap resumes at 1200 where the column is wide enough to earn it. */
+  @media(min-width:900px) and (max-width:1199px){
+    .hero h1{font-size:clamp(38px,5vw,52px)}
+  }
+
+  /* --- Wide-viewport breathing room (premium rhythm past laptop width; mobile untouched) ----- */
+  @media(min-width:1100px){
+    .services .inner{padding-top:92px;padding-bottom:92px}
+    .how .inner,.faq .inner{padding-top:84px;padding-bottom:84px}
+    .quote .inner{padding-top:88px}
+    .hero-copy p{font-size:19px}
+  }
+
+  /* ============================= NEW SECTION: DECIBEL DUEL (2026-07-02, rebuild 6) =================
+     "Loud is a Choice." Sits between the tesla photo and the foam map sheet, deepening the
+     "why electric" beat before the where/what/how. Uses the site's standard .inner container so
+     the headline reads on one line like every other section; the subhead also holds one line at
+     desktop widths (mobile wraps normally, that's expected).
+     Drag a native range 60-95 dB. ONE color, --duel-color, drives both the circle fill and every
+     ring's border/glow (set once per input event in the script near </body>) so fill and glow can
+     never mismatch. Ring count/spacing/shape are continuous functions of t=(v-60)/35. The caption
+     below the circle is the SINGLE source of descriptive text (no separate tick labels near the
+     handle) and STEPS through 8 fixed strings, each triggering exactly AT its labeled round number
+     (65/70/75/80/85/90/95), deliberately discrete since words cannot blend the way the color ramp
+     does. Only the circle itself (not the rings) gets a literal jitter, scoped to 85-95 dB (widened
+     from 91-95 so the climb reads slower) with an eased, non-uniform amplitude/speed ramp, same
+     0.125px floor to 1.05px peak strength as before so the number stays clearly legible while
+     shaking, just stretched across a wider window. */
+  /* LIGHT-SHEET TEST (2026-07-03, per Kevin, testing before quieting the glow): was #0F2A40, the
+     darkest sheet on the site, breaking the light-to-dark descent right after it. Now a pale
+     cool gray, one step off pure white, distinct from the map's foam (#B7C3CC) just below so the
+     two light sheets don't read as one duplicated slab, the same "two whites" depth trick the
+     papercut doc calls for. Keeps the section's position right after the photo, where the
+     intensity is wanted. Ring/circle colors are untouched below, only surrounding text and chrome
+     were re-tuned for a light backdrop; watch whether the rings read clearly enough at low dB
+     once this actually renders, that's an open question, not yet resolved. */
+  .decibel{background:#B7C3CC;  /* 2026-07-03: was #E8ECEE (near-white), moved to the old foam blue level per Kevin, so the abyss descent starts here instead of at the .area section below it; text/chrome contrast re-verified against this exact value, all still clear AA */
+    /* Straight-seam recipe (2026-07-05, Kevin): was a faint "light-sheet test" seam (white .6 edge +
+       .08/.12 darks) that read as a white line under the tesla photo with no real cut. Now the
+       documented first-paper-sheet cut, byte-identical to the .area seam, at ALL widths. */
+    box-shadow:
+      inset 0 1px 0 rgba(255,255,255,.16),
+      inset 0 2px 1px -1px rgba(0,0,0,.46),
+      inset 0 8px 9px -4px rgba(0,0,0,.54)}
+  .decibel .inner{padding-top:64px;padding-bottom:64px}
+  .decibel h2{color:#0d1828;text-align:center}
+  /* ~93 characters. Measured at the site's default 17px body size this is ~685px wide, well under
+     the 1080px .inner's ~1032px usable width, so no size-down was actually needed once the old
+     560px max-width cap (the real culprit) came off; verified by render, not assumed. */
+  .decibel-sub{margin-top:14px;font-size:17px;color:#27323d;line-height:1.6;text-align:center}
+
+  .duel{margin:44px auto 0;max-width:600px;text-align:center}
+  /* was var(--tan): tan measures under 2:1 on the new light background, unusable. Dark slate
+     matches the same fix already applied to the map kicker for the same reason. */
+  .duel .kicker{color:#27323d}
+  .duel-label{color:#0d1828;font-weight:700;font-size:18px;margin-top:6px}
+
+  /* --- circular live readout: fill + ring color both read var(--duel-color), one source of truth */
+  .duel-display{margin-top:32px}
+  .duel-stage{position:relative;width:200px;height:200px;margin:0 auto;
+        display:flex;align-items:center;justify-content:center;--duel-color:#2EB069}
+  .duel-ring{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);
+        border:2px solid var(--duel-color);box-shadow:0 0 9px var(--duel-color);pointer-events:none}
+        /* 2026-07-03: added a real glow halo (box-shadow), not just a blurred border stroke. On the
+           old dark navy background a translucent green line alone still read as "glowing"; on the
+           new light blue it didn't, per Kevin. The halo plus the animated glow radius below (see
+           duelBreathe) is what actually punches now. */
+  .duel-circle{position:relative;z-index:2;width:104px;height:104px;border-radius:50%;
+        background:var(--duel-color);box-shadow:0 0 var(--duel-glow,18px) var(--duel-color);
+        display:flex;flex-direction:column;align-items:center;justify-content:center;
+        color:#0b1622}
+  .duel-db{font-size:22px;font-weight:800;line-height:1}
+  .duel-db-unit{font-size:10px;font-weight:700;letter-spacing:.06em;margin-top:1px}
+
+  /* 85-95 dB only: the circle itself (not the rings) gets a small, fast, literal jitter. Amplitude
+     AND duration both scale continuously (eased, not linear) from barely-there at 85 to most
+     violent at 95, via --shake-amt/--shake-dur, so the zone reads as a slow ramp, not one flat
+     intensity turned on all at once. Gated on prefers-reduced-motion below, and the .shaking
+     class itself is only ever added at v>=85, so there is nothing to disable below that anyway. */
+  @media(prefers-reduced-motion:no-preference){
+    .duel-circle.shaking{animation:duelCircleShake var(--shake-dur,.12s) linear infinite}
+  }
+  @keyframes duelCircleShake{
+    0%{transform:translate(0,0)}
+    20%{transform:translate(calc(var(--shake-amt,0) * 1px),calc(var(--shake-amt,0) * -0.6px))}
+    40%{transform:translate(calc(var(--shake-amt,0) * -0.8px),calc(var(--shake-amt,0) * 1px))}
+    60%{transform:translate(calc(var(--shake-amt,0) * 1px),calc(var(--shake-amt,0) * 0.7px))}
+    80%{transform:translate(calc(var(--shake-amt,0) * -1px),calc(var(--shake-amt,0) * -1px))}
+    100%{transform:translate(0,0)}
+  }
+
+  /* Single caption, the only descriptive text in this section. Discrete 8-value steps can't
+     blend like color, so this crossfades on change instead (only retriggers when the text
+     actually changes, not on every micro-tick of the drag). */
+  .duel-caption{margin-top:20px;color:#0d1828;font-weight:800;font-size:clamp(22px,3.2vw,28px);line-height:1.15;min-height:34px;
+        opacity:0;transform:translateY(5px);transition:opacity .3s ease,transform .3s ease}
+  .duel-caption.show{opacity:1;transform:translateY(0)}
+
+  /* --- track: end labels (two lines, small caps) + the range itself. No labels near the handle;
+     all descriptive text lives in the single caption above. */
+  .duel-track-wrap{display:flex;align-items:flex-end;gap:14px;margin-top:34px;text-align:left}
+  .duel-end{display:flex;flex-direction:column;width:70px;flex:none}
+  .duel-end.right{align-items:flex-end;text-align:right;margin-left:auto}
+  .duel-end .db{color:#0d1828;font-weight:800;font-size:13px;letter-spacing:.03em;text-transform:uppercase}
+  .duel-end .name{color:#425058;font-weight:600;font-size:12px;letter-spacing:.03em;
+        text-transform:uppercase;margin-top:2px}
+  .duel-track{position:relative;flex:1}
+
+  .duel-range{-webkit-appearance:none;appearance:none;width:100%;height:6px;border-radius:999px;
+        cursor:pointer;background:linear-gradient(90deg,
+          #2EB069 0%, #7A8E4A 25.7%, #C7943A 51.4%, #D6642C 74.3%, #C42E2E 100%)}
+  .duel-range::-webkit-slider-runnable-track{height:6px;border-radius:999px;background:transparent}
+  .duel-range::-moz-range-track{height:6px;border-radius:999px;background:linear-gradient(90deg,
+          #2EB069 0%, #7A8E4A 25.7%, #C7943A 51.4%, #D6642C 74.3%, #C42E2E 100%)}
+  .duel-range::-webkit-slider-thumb{-webkit-appearance:none;appearance:none;margin-top:-9px;
+        width:24px;height:24px;border-radius:50%;background:#0d1828;
+        border:2px solid #fff;cursor:pointer;box-shadow:0 3px 10px rgba(13,24,40,.35)}
+  .duel-range::-moz-range-thumb{width:24px;height:24px;border-radius:50%;background:#0d1828;
+        border:2px solid #fff;cursor:pointer;box-shadow:0 3px 10px rgba(13,24,40,.35)}
+  .duel-range:focus-visible{outline:3px solid var(--blue);outline-offset:5px}
+
+  .duel-hint{margin-top:16px;color:#425058;font-size:13px}  /* darkened from #5c6b78 (2.28:1) to 4.64:1 to clear AA on the new #B7C3CC background */
+  .decibel-close{margin:28px auto 0;max-width:660px;color:#27323d;font-size:17px;line-height:1.55;text-align:center}
+
+  /* Gentle idle "breathe" on whichever rings are currently visible, never a layout-wide shake.
+     Purely ambient life driven by --duel-dur; ring color/count/shape still update instantly on
+     input regardless of this media query, so reduced motion loses only the idle loop, not state. */
+  @media(prefers-reduced-motion:no-preference){
+    .duel-ring{animation:duelBreathe var(--duel-dur,2.4s) ease-in-out infinite}
+    .duel-ring.r2{animation-delay:.15s}
+    .duel-ring.r3{animation-delay:.3s}
+  }
+  @keyframes duelBreathe{
+    0%,100%{transform:translate(-50%,-50%) scale(1);box-shadow:0 0 9px var(--duel-color)}
+    50%{transform:translate(-50%,-50%) scale(1.06);box-shadow:0 0 20px var(--duel-color)}
+  }
+  /* 2026-07-03: the pulse used to be scale-only, a ~4.5% size wobble on an already-faint ring is too
+     subtle to read as "animated," per Kevin ("hard to see it's actually animated and pulsing").
+     Pulsing the glow radius alongside a slightly bigger scale reads as an actual heartbeat, not a
+     wobble. Shared by all three rings (r2/r3 get this too via animation-delay stagger), since it
+     was already fine for them and this only adds more life, not less. */
+
+  /* ============================= SCROLL REVEALS (2026-07-01) =============================
+     On-entry only, once per section, IntersectionObserver-driven (see script near </body>).
+     The hero is deliberately excluded (already visible on load). Fully inert when the user
+     prefers reduced motion: the opacity/transform rules below live ONLY inside the
+     no-preference query, so with no JS and no media-query match content simply renders in
+     place at full opacity. Seam shadows (the box-shadow cuts between sections) are untouched. */
+  @media(prefers-reduced-motion:no-preference){
+    /* F2 (2026-07-05, mobile premium pass): .quote is EXEMPT from the scroll reveal. It is the
+       destination of the primary "Get an Instant Quote" CTA, which anchor-jumps to it; an instant
+       jump (or fast flick) could otherwise land the user on the money screen mid-fade, rendered
+       half-faded. Excluding it here means .quote .inner always paints solid at every width. The
+       trade is that the quote section no longer does its 7px fade-up on entry (deliberate). */
+    section:not(.hero):not(.tesla):not(.quote) .inner{
+      opacity:0;transform:translateY(7px);
+      transition:opacity .36s ease-out,transform .36s ease-out}
+    section:not(.hero):not(.tesla):not(.quote).in-view .inner{opacity:1;transform:translateY(0)}
+
+    /* Tesla headline: the one place the reveal carries real drama, each line a beat behind the last. */
+    .tesla-text .kicker{opacity:0;transform:translateY(7px);
+        transition:opacity .34s ease-out,transform .34s ease-out}
+    .tesla.in-view .tesla-text .kicker{opacity:1;transform:translateY(0)}
+    .tesla-head .rl{display:inline-block;opacity:0;transform:translateY(10px);
+        transition:opacity .4s ease-out,transform .4s ease-out}
+    .tesla.in-view .tesla-head .rl:nth-of-type(1){transition-delay:.1s}
+    .tesla.in-view .tesla-head .rl:nth-of-type(2){transition-delay:.24s}
+    .tesla.in-view .tesla-head .rl:nth-of-type(3){transition-delay:.38s}
+    .tesla.in-view .tesla-head .rl{opacity:1;transform:translateY(0)}
+  }
+
+  /* ===================== BATCH 2 MOBILE POLISH (2026-07-05, Kevin's Craft list) ==================
+     Phone-only spacing + layout tightening to cut vertical scroll, plus a few section-specific
+     fixes. Everything here is scoped to <=640, so desktop and tablet keep their existing rhythm. */
+  @media(max-width:640px){
+    /* DECIBEL: less air above "Loud is a choice" and below the closing line. Caption height locked
+       to two lines so the slider never jumps when a caption wraps from one line to two. */
+    .decibel .inner{padding-top:26px;padding-bottom:38px}
+    .decibel-close{margin-top:22px}
+    .duel-caption{min-height:56px;display:flex;flex-direction:column;justify-content:center}
+
+    /* SERVICE AREA: 5 city chips become a tidy 2-col / 3-row grid (Ponte Vedra spans full width,
+       centered); chips shrink slightly so "Jacksonville Beach" fits two-up. Less air under the
+       note and above/below the map. */
+    .beaches{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:22px}
+    .beaches .brk{display:none}
+    .beach{justify-content:center;font-size:13.5px;padding:10px 8px}
+    .beach.soon{grid-column:1 / -1}
+    .area p.note{margin-top:20px;font-size:15.5px}
+    .area .inner{padding-top:36px;padding-bottom:24px}
+    .area-map{margin-top:16px}
+
+    /* SERVICES + HOW IT WORKS: trim top and bottom air, and (Kevin) move the number to the LEFT of
+       each item's title + text instead of stacked above it. Number badge + title share the top row
+       (centered together), the description sits under the title in the right column. */
+    .services .inner{padding-top:44px;padding-bottom:44px}
+    .how .inner{padding-top:44px;padding-bottom:44px}
+    .card,.how .step{display:grid;grid-template-columns:42px 1fr;column-gap:14px;align-items:start}
+    .card .n,.how .step .n{grid-column:1;grid-row:1 / span 2;align-self:start;transform:translateY(6px)}   /* Kevin: badge centered on the gap between the title and the first body line. align-self:start anchors the badge to the group TOP (title top), so this stays correct no matter how many lines the body wraps to (2 lines at 390, 3 lines at 362). translateY tunes it onto the gap. */
+    .card h3,.how .step h3{grid-column:2;grid-row:1;margin-top:0}
+    .card p,.how .step p{grid-column:2;grid-row:2;margin-top:6px}
+
+    /* HERO microcopy: even out the four stacked lines under the button. The gap between the two
+       pairs was ~22px vs ~18px within a pair; zero the inter-paragraph margin so all four lines sit
+       at one even line rhythm, and match the button gap to it. */
+    .qbox .micro{margin-top:16px}
+    .qbox .micro + .micro{margin-top:0}
+
+    /* ABOUT: equalize the three gaps Kevin flagged (above photo, below photo, beneath signature) to
+       one clean value. The grid's own 40px row-gap is zeroed on mobile so the photo margin alone
+       controls the below-photo gap; the section's top and bottom padding match it. */
+    .about .inner{padding-top:44px;padding-bottom:44px}
+    .about-grid{gap:0}
+    .about-grid img.photo{margin-bottom:44px}
+
+    /* GOOD QUESTIONS (FAQ): less air above the heading; drop the last hairline so the section seam
+       below becomes the divider (Kevin's idea), and pull the bottom in. */
+    .faq .inner{padding-top:44px;padding-bottom:34px}
+    .faq details:last-child{border-bottom:none}
+
+    /* FINAL QUOTE: less air above the heading, and pull the footer up under the widget. */
+    .quote .inner{padding-top:44px}
+    footer{margin-top:40px}
+
+    /* FOOTER: a little more breathing room between the stacked city lines and the legal lines
+       (bumped again per Kevin). */
+    footer .f-cities .fc-line + .fc-line{margin-top:8px}
+    footer .f-legal .fl-item{line-height:1.3}
+    footer .f-legal .fl-item + .fl-item{margin-top:9px}
+
+    /* PAPER-CUT ANSWER (Kevin): the white hero -> white trust seam had only a hairline, so give it a
+       subtle cut. (The tesla-photo -> decibel seam is now fixed at the base .decibel rule for ALL
+       widths, using the documented straight-seam recipe, so no mobile override is needed here.) */
+    .trustbar{box-shadow:inset 0 2px 1px -1px rgba(13,24,40,.12),inset 0 9px 9px -6px rgba(13,24,40,.10)}
+  }
+</style>
+</head>
+<body>
+
+<!-- Accessibility: keyboard users land here first and can jump straight to the content. -->
+<a class="skip" href="#top">Skip to content</a>
+
+<!-- BRAND HEADER: logo + links + a quiet text-link path to a quote. Sticky-on-scroll-up (re-reversed
+     2026-07-03 later the same day, see v2-merge-checklist.md): hides while scrolling down, reappears
+     on scroll-up, so there is a quote path in the middle of the page without a second button
+     competing with the hero's at first paint. Behavior script is near </body>.
+     The call link stays hidden until the real Twilio number exists (ratified pattern, see
+     website-build/index.html). Remove the hidden attribute and set href="tel:..." at launch. -->
+<header class="site-nav">
+  <div class="inner">
+    <nav>
+      <div class="logo"><b>Dune Runner</b><span>Electric Lawn Care</span></div>
+      <div class="nav-right">
+        <div class="links">
+          <a href="#area">Service Area</a>
+          <a href="#services">Services</a>
+          <a href="#about">About</a>
+          <a href="#faq">FAQ</a>
+        </div>
+        <a class="nav-call" data-call-link href="#" hidden>Call</a>
+        <a class="nav-cta" href="#get-quote" data-focus-quote>Get an Instant Quote</a>
+      </div>
+    </nav>
+  </div>
+</header>
+
+<!-- LAYER 1: bright white -->
+<section class="hero" id="top">
+  <div class="inner">
+    <div class="hero-copy">
+      <h1>A quiet lawn,<br>beautifully kept.</h1>
+      <p>What you'll hear while we mow&hellip; <br class="mbr">the sprinkler next door, <br class="lb">a screen door, <br class="mbr">and the ocean, if the wind is right.</p>
+    </div>
+    <!-- ADDRESS-BOX CONVERSION COMPONENT (spec 4.1: the hero's primary content + the page spine).
+         Now a sibling of .hero-copy (2026-07-03, item 8) so desktop can place it in a second column
+         beside the copy; on mobile it stays in document flow, right under the copy, unchanged.
+         PRESENTATIONAL placeholder: real submit is the estimator lane's job, wired onto the
+         data- hooks below. Microcopy is ratified verbatim (website-direction.md section 6). -->
+    <form class="qbox" id="get-quote" data-quote-component aria-label="Get an instant quote">
+      <div class="row">
+        <div class="field">
+          <label for="quote-address">Your address</label>
+          <input id="quote-address" name="address" type="text" autocomplete="street-address"
+                 placeholder="123 Ocean Ave, Neptune Beach" data-address-input>
+        </div>
+        <button type="submit" data-quote-submit>Get an Instant Quote</button>
+      </div>
+      <p class="micro">Takes about ten seconds.<br class="mbr"> No phone number needed.</p>
+      <p class="micro">The price you see <br class="mbr">is the price you pay, or less.</p>
+      <p class="msg" aria-live="polite" data-quote-message></p>
+    </form>
+  </div>
+</section>
+
+<!-- TRUST STRIP: slim credibility band, added 2026-06-22 -->
+<section class="trustbar" id="trust" aria-label="Why neighbors trust Dune Runner">
+  <div class="inner">
+    <div class="ti"><span class="dot"></span><span class="ti-ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l7 2.6v5.1c0 4.3-2.9 7.2-7 8.7-4.1-1.5-7-4.4-7-8.7V5.6L12 3z"/><path d="M8.7 12l2.3 2.3 4.3-4.4"/></svg></span>Licensed &middot; Insured &middot; Bonded</div>
+    <div class="sep" aria-hidden="true"></div>
+    <div class="ti"><span class="dot"></span><span class="ti-ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="3.3"/><path d="M5.5 19.5c0-3.4 2.9-5.8 6.5-5.8s6.5 2.4 6.5 5.8"/></svg></span>Owner-Operated</div>
+    <div class="sep" aria-hidden="true"></div>
+    <div class="ti"><span class="dot"></span><span class="ti-ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M4 11l8-6 8 6"/><path d="M6.2 9.6V19h11.6V9.6"/></svg></span>Your Neighbor Since 2016</div>
+    <div class="sep" aria-hidden="true"></div>
+    <div class="ti"><span class="dot"></span><span class="ti-ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="8.4"/><path d="M12 7.4V12l3.1 2"/></svg></span>Replies Within 24 Hours</div>
+  </div>
+</section>
+
+<!-- LAYER 1b: TESLA SHOWCASE, straight top and bottom edges -->
+<section class="tesla" id="tesla">
+  <div class="tesla-scrim"></div>
+  <div class="tesla-text"><div class="inner">
+    <div class="kicker">Quiet &middot; Clean &middot; Electric</div>
+    <h2 class="tesla-head"><span class="rl">No Gas</span><br><span class="rl">No Fumes</span><br><span class="rl">No Roar</span></h2>
+  </div></div>
+  <!-- Mobile-only image (desktop uses the .tesla background-image, untouched). Tightened crop
+       (2026-07-05, mobile premium pass F4): the old mobile file was the same wide 2.35:1 landscape,
+       just downscaled, so the rig read tiny/distant. tesla-showcase-mobile-tight.webp is cropped from
+       the 1920x800 hi-res source (scripts/build-tesla-mobile-crop.py) to trim the empty left trees and
+       let the Tesla + trailer fill the frame. -->
+  <img class="tesla-mobile" src="website-assets/tesla-showcase-mobile-tight.webp" alt="A white Tesla Model Y towing the Dune Runner electric lawn care trailer on a tree-lined beach road" onerror="this.remove()">
+</section>
+
+<!-- NEW: "Loud is a Choice." (the Decibel Duel), rebuilt 2026-07-02 (2nd pass) per the fully-
+     rewritten spec. Sits between the tesla photo and the foam map sheet, deepening the "why
+     electric" beat before the where/what/how. Standard .inner container (headline AND subhead
+     both read on one line at desktop widths, like every other section). Native range input drives
+     a circular live readout: one --duel-color variable feeds both the circle fill and every ring's
+     border/glow, so they can never mismatch. There is no label near the handle itself; the single
+     caption below the circle is the only descriptive text, stepping through 8 fixed strings at
+     each 5 dB threshold. The stage and caption are aria-hidden; the range's own label + live
+     aria-valuetext carry the accessible value, so nothing double-announces. Behavior is in the
+     DECIBEL DUEL script near </body>. -->
+<section class="decibel" id="decibel" aria-label="Why we chose electric">
+  <div class="inner">
+    <h2>Loud is a choice.</h2>
+    <p class="decibel-sub">We chose otherwise. All-electric lawn care that keeps the quiet you moved to <br class="mbr">The Beaches for.</p>
+    <div class="duel">
+      <div class="kicker">Hear the Difference</div>
+      <div class="duel-label">The Decibel Duel</div>
+
+      <div class="duel-display" aria-hidden="true">
+        <div class="duel-stage" data-duel-stage>
+          <span class="duel-ring r3"></span>
+          <span class="duel-ring r2"></span>
+          <span class="duel-ring r1"></span>
+          <div class="duel-circle" data-duel-circle>
+            <span class="duel-db" data-duel-db>60</span>
+            <span class="duel-db-unit">dB</span>
+          </div>
+        </div>
+        <p class="duel-caption" data-duel-caption>Dune Runner<span class="lb">.</span> <br class="mbr">A Quiet Conversation</p>
+      </div>
+
+      <div class="duel-track-wrap">
+        <div class="duel-end left">
+          <span class="db">60 dB</span><span class="name">Electric</span>
+        </div>
+        <div class="duel-track">
+          <input type="range" class="duel-range" min="60" max="95" value="60" step="1"
+                 aria-label="Drag between 60 decibels for electric lawn care and 95 decibels for a gas crew"
+                 data-duel-range>
+        </div>
+        <div class="duel-end right">
+          <span class="db">95 dB</span><span class="name">Gas crew</span>
+        </div>
+      </div>
+      <p class="duel-hint">Drag the handle.</p>
+    </div>
+    <p class="decibel-close">After a month with us, you'll hear your old crew three houses away <br class="lb">and wonder how anyone still thinks that's normal?</p>
+  </div>
+</section>
+
+<!-- LAYER 2: SERVICE AREA -->
+<section class="area" id="area">
+  <div class="inner">
+    <div class="area-copy">
+      <div class="kicker">Where We Mow</div>
+      <h2>Exclusively serving <br class="mbr">the beaches.</h2>
+      <div class="beaches">
+        <div class="beach"><span class="dot" style="background:#99A69A"></span>Atlantic Beach</div>
+        <div class="beach"><span class="dot" style="background:#D89696"></span>Neptune Beach</div>
+        <div class="beach"><span class="dot" style="background:#E2A650"></span>Jacksonville Beach</div>
+        <div class="brk"></div>
+        <div class="beach"><span class="dot" style="background:#C8A96E"></span>Mayport</div>
+        <div class="beach soon">Ponte Vedra &middot; Fall 2026</div>
+      </div>
+      <p class="note">We stay east of the Intracoastal on purpose<span class="lb-dot">. </span><br class="lb">From Mayport down to Jacksonville Beach<span class="lb-dot">. </span><br class="lb">Tight routes mean we show up when we say we will<span class="lb-dot">.</span></p>
+    </div>
+  </div>
+  <picture>
+    <!-- 2026-07-04: Sea Oats data-built map (map-rebuild/v2) replaces the floating cut-paper art; originals backed up in map-rebuild/original-site-images/ -->
+    <source media="(max-width:980px)" srcset="website-assets/service-map-sea-oats-mobile.png">
+    <img class="area-map" src="website-assets/service-map-sea-oats.png" alt="Map of the Dune Runner service area: the barrier island from Mayport through Jacksonville Beach, between the Intracoastal and the Atlantic Ocean" onerror="this.remove()">
+  </picture>
+</section>
+
+<!-- LAYER 3 -->
+<section class="services" id="services">
+  <div class="inner">
+    <div class="kicker">What We Do</div>
+    <h2>Simple, complete, <br class="mbr">every visit.</h2>
+    <div class="cards">
+      <div class="card"><div class="n">1</div><h3>Mowing</h3><p>A clean, even cut on a steady schedule, <br class="lb-wide">so your lawn always looks freshly done.</p></div>
+      <div class="card"><div class="n">2</div><h3>Edging and trimming</h3><p>Crisp lines along drives, walks, and beds. <br class="lb-wide">The attention to detail people notice.</p></div>
+      <div class="card"><div class="n">3</div><h3>Blowing and cleanup</h3><p>Sand and clippings off every hard surface <br class="lb-wide">before we roll up quietly.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- HOW IT WORKS: 3 steps + the instant-price promise, added 2026-06-22 -->
+<section class="how" id="how">
+  <div class="inner">
+    <div class="kicker">How It Works</div>
+    <h2>Your price in <br class="mbr">three steps.</h2>
+    <div class="steps">
+      <div class="step">
+        <div class="n">1</div>
+        <h3>Request</h3>
+        <p>Type your address. No phone number, <br class="lb">no long form, no sales call.</p>
+      </div>
+      <div class="step">
+        <div class="n">2</div>
+        <h3>Instant quote</h3>
+        <p>A fair, flat price appears in seconds, <br class="lb">sized to your actual lot.</p>
+      </div>
+      <div class="step">
+        <div class="n">3</div>
+        <h3>We mow</h3>
+        <p>Approve it and we are on your street, <br class="lb">quiet and electric, every time.</p>
+      </div>
+    </div>
+    <p class="promise">No price games. The in-person price always lands at or below your <br class="mbr">instant estimate.</p>
+  </div>
+</section>
+
+<!-- LAYER 4 -->
+<section class="about" id="about">
+  <div class="inner">
+    <div class="about-grid">
+      <div>
+        <div class="kicker">About</div>
+        <h2>Your neighbor, <br class="mbr">not a crew.</h2>
+        <p>Owner-operated by Kevin Martin, <br class="mbr">a Neptune Beach resident since 2016.</p>
+        <div class="chips">
+          <div class="chip">Licensed, Insured, and Bonded</div>
+          <div class="chip">Local Since 2016</div>
+          <div class="chip">Replies Within 24 Hours</div>
+        </div>
+        <p class="trust">We only use commercial-grade electric equipment. Mornings stay yours, pets stay calm, and the cut <br class="mbr">still looks sharp, just without all the noise.</p>
+        <div class="guarantee">If the first mow is not right, <br class="mbr">the next one is free.</div>
+        <img class="signature" src="website-assets/km-signature-tan.png" alt="Kevin Martin's signature" onerror="this.remove()">
+      </div>
+      <img class="photo" src="Kevin%20Portraits/about-portrait-v3-sunset.webp" alt="Kevin Martin, owner of Dune Runner" onerror="this.remove()">
+    </div>
+  </div>
+</section>
+
+<!-- ===== HIDDEN DRAFT 1 of 2: REVIEWS (added 2026-06-22) =========================================
+     Remove "hidden-draft" from the <section> tag below to PUBLISH. All six quotes are PLACEHOLDER
+     copy; never ship invented reviews. Launch with 3 to 6 REAL Google reviews pasted in here. -->
+<section class="reviews hidden-draft" id="reviews" aria-label="What neighbors say">
+  <div class="inner">
+    <div class="kicker">What Neighbors Say</div>
+    <h2>Quietly, the talk of the street.</h2>
+    <div class="grid">
+      <!-- PLACEHOLDER review 1 -->
+      <div class="rc"><div class="stars" aria-label="5 out of 5 stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <p>The quietest lawn service I have ever had. I honestly did not hear them arrive.</p>
+        <div class="who">Sarah M., Neptune Beach</div></div>
+      <!-- PLACEHOLDER review 2 -->
+      <div class="rc"><div class="stars" aria-label="5 out of 5 stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <p>Crisp edges, no fumes, and my dog stayed calm the whole time. Worth every dollar.</p>
+        <div class="who">David R., Atlantic Beach</div></div>
+      <!-- PLACEHOLDER review 3 -->
+      <div class="rc"><div class="stars" aria-label="5 out of 5 stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <p>Reliable, always on time, and the lawn has never looked better.</p>
+        <div class="who">Linda T., Jacksonville Beach</div></div>
+      <!-- PLACEHOLDER review 4 -->
+      <div class="rc"><div class="stars" aria-label="5 out of 5 stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <p>The instant quote was spot on and the in-person price matched it. No surprises.</p>
+        <div class="who">Mark D., Neptune Beach</div></div>
+      <!-- PLACEHOLDER review 5 -->
+      <div class="rc"><div class="stars" aria-label="5 out of 5 stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <p>Finally a service that respects a quiet morning. The neighbors noticed too.</p>
+        <div class="who">Janet K., Atlantic Beach</div></div>
+      <!-- PLACEHOLDER review 6 -->
+      <div class="rc"><div class="stars" aria-label="5 out of 5 stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <p>Clean, careful, and genuinely local. This is how a small lawn should be cared for.</p>
+        <div class="who">Tom W., Jacksonville Beach</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== HIDDEN DRAFT 2 of 2: BEFORE / AFTER SLIDER (added 2026-06-22) ============================
+     Remove "hidden-draft" from the <section> tag below to PUBLISH. The two images are same-size
+     PLACEHOLDERS so the drag mechanic is demonstrable now. Swap the two src= paths (marked below)
+     for a real before/after pair of identical dimensions; nothing else needs to change. -->
+<section class="ba hidden-draft" id="before-after" aria-label="Before and after">
+  <div class="inner">
+    <div class="kicker">The Difference</div>
+    <h2>From overgrown to beautifully kept.</h2>
+    <div class="ba-wrap" id="ba-wrap">
+      <!-- SWAP HERE: AFTER photo (base image, fills the whole frame) -->
+      <img class="ba-after" src="website-assets/after-placeholder.webp" alt="After: a freshly mowed lawn">
+      <!-- SWAP HERE: BEFORE photo (sits on top, shown on the LEFT side of the handle) -->
+      <img class="ba-before" id="ba-before" src="website-assets/before-placeholder.webp" alt="Before: an overgrown lawn">
+      <span class="ba-tag before">Before</span>
+      <span class="ba-tag after">After</span>
+      <div class="ba-line" id="ba-line"></div>
+      <button class="ba-handle" id="ba-handle" type="button" role="slider"
+              aria-label="Drag to compare before and after"
+              aria-valuemin="0" aria-valuemax="100" aria-valuenow="50">
+        <span class="ba-knob" aria-hidden="true">&#8596;</span>
+      </button>
+    </div>
+    <p class="hint">Drag the handle, or focus it and use the left and right arrow keys.</p>
+  </div>
+</section>
+
+<!-- FAQ: visible. Answer-first, factual, no invented prices. FAQPage JSON-LD is at the end of
+     <body> (optional: Google retired FAQ rich results 2026-05-07; kept for users + AI answers). -->
+<section class="faq" id="faq" aria-label="Frequently asked questions">
+  <div class="inner">
+    <div class="kicker">Good Questions</div>
+    <h2>The things neighbors ask first.</h2>
+    <div class="list">
+      <details name="faq"><summary>Is battery power enough for <br class="mbr">Florida grass?</summary>
+        <div class="a">Yes. Our equipment effortlessly powers through any type of grass, whether it's St. Augustine, Zoysia, or Bermuda, and the cut looks just as good, often better than gas.</div></details>
+      <details name="faq"><summary>What does lawn service cost?</summary>
+        <div class="a">Every lawn is a little different, so we do not post one flat price. Type your address for an instant estimate, and the in-person price always lands at or below it.</div></details>
+      <details name="faq"><summary>Do I need a contract?</summary>
+        <div class="a">No. Pricing stays the same year-round, we just visit more often in the summer growing season and less in winter, and you can cancel anytime with 24 hours notice.</div></details>
+      <details name="faq"><summary>What if it rains on my day?</summary>
+        <div class="a">Your visit is moved a day or two and confirmed by text. A visit is never simply lost.</div></details>
+      <details name="faq"><summary>Do I need to be home?</summary>
+        <div class="a">No. A gate code or a side-yard note in your booking covers it.</div></details>
+      <details name="faq"><summary>Is it safe for pets and kids right after?</summary>
+        <div class="a">Yes. Nothing is sprayed and nothing is burned, <br class="lb">so the lawn is ready to use the moment the gear is packed up.</div></details>
+    </div>
+  </div>
+</section>
+
+<!-- LAYER 6 -->
+<section class="quote" id="quote">
+  <div class="inner">
+    <h2>Your price in minutes, <br class="mbr">not visits.</h2>
+    <p>Type your address, <br class="mbr">get an instant estimate.<br>The in-person price always <br class="mbr">lands at or below it.</p>
+    <!-- Second instance of the address-box component (spec 4.9). Same presentational placeholder. -->
+    <form class="qbox" data-quote-component aria-label="Get an instant quote">
+      <div class="row">
+        <div class="field">
+          <label for="quote-address-2">Your address</label>
+          <input id="quote-address-2" name="address" type="text" autocomplete="street-address"
+                 placeholder="123 Ocean Ave, Neptune Beach" data-address-input>
+        </div>
+        <button type="submit" data-quote-submit>Get an Instant Quote</button>
+      </div>
+      <p class="micro">Takes about ten seconds.<br class="mbr"> No phone number needed.</p>
+      <p class="msg" aria-live="polite" data-quote-message></p>
+    </form>
+    <footer>
+      <div class="f-brand">Dune Runner</div>
+      <!-- Cities + legal are split into spans so mobile (<=640) can stack them cleanly (centered,
+           Jacksonville Beach on its own line, phone on its own line) while desktop stays byte-identical:
+           the .fc-mid dot and .fl-pipe separators render inline on desktop, display:none on mobile. -->
+      <div class="f-cities"><span class="fc-line">Atlantic Beach &middot; Neptune Beach</span><span class="fc-mid"> &middot; </span><span class="fc-line">Jacksonville Beach &middot; Mayport</span></div>
+      <!-- PHONE is the PLACEHOLDER (904) 555-0123 until the real Twilio number exists. -->
+      <div class="f-legal"><span class="fl-item" style="white-space:nowrap">Licensed &middot; Insured &middot; Bonded</span><span class="fl-pipe"> &nbsp;|&nbsp; </span><span class="fl-item" style="white-space:nowrap">(904) 555-0123</span><span class="fl-pipe"> &nbsp;|&nbsp; </span><span class="fl-item" style="white-space:nowrap">DuneRunnerLawns.com</span></div>
+      <div class="f-links"><a href="privacy.html">Privacy</a> &middot; <a href="terms.html">Terms</a> &middot; <a href="accessibility.html">Accessibility</a></div>
+    </footer>
+  </div>
+</section>
+
+<!-- ===== BEFORE/AFTER SLIDER behavior (vanilla; mouse + touch + keyboard) ========================
+     Guarded so it is harmless while the section is hidden, and works the moment it is un-hidden. -->
+<script>
+(function(){
+  var wrap=document.getElementById('ba-wrap');
+  if(!wrap) return;
+  var before=document.getElementById('ba-before'),
+      line=document.getElementById('ba-line'),
+      handle=document.getElementById('ba-handle');
+  var pos=50, dragging=false;
+  function set(p){
+    pos=Math.max(0,Math.min(100,p));
+    before.style.clipPath='inset(0 '+(100-pos)+'% 0 0)';  // show the left "pos%" as BEFORE; right is AFTER
+    line.style.left=pos+'%'; handle.style.left=pos+'%';
+    handle.setAttribute('aria-valuenow',Math.round(pos));
+  }
+  function fromX(clientX){
+    var r=wrap.getBoundingClientRect();
+    if(!r.width) return;                                   // hidden: skip the math
+    set(((clientX-r.left)/r.width)*100);
+  }
+  wrap.addEventListener('pointerdown',function(e){
+    dragging=true; wrap.setPointerCapture&&wrap.setPointerCapture(e.pointerId);
+    fromX(e.clientX); e.preventDefault();
+  });
+  wrap.addEventListener('pointermove',function(e){ if(dragging) fromX(e.clientX); });
+  wrap.addEventListener('pointerup',function(){ dragging=false; });
+  wrap.addEventListener('pointercancel',function(){ dragging=false; });
+  handle.addEventListener('keydown',function(e){
+    if(e.key==='ArrowLeft'){ set(pos-4); e.preventDefault(); }
+    else if(e.key==='ArrowRight'){ set(pos+4); e.preventDefault(); }
+    else if(e.key==='Home'){ set(0); e.preventDefault(); }
+    else if(e.key==='End'){ set(100); e.preventDefault(); }
+  });
+  set(50);
+})();
+</script>
+
+<!-- ===== DESKTOP COMPLETION behavior (2026-06-25): sticky-header shadow, focus-quote, quote stub ===
+     The quote handler is a PLACEHOLDER. The estimator lane replaces it by handling submit on
+     [data-quote-component] and writing the real price/state into [data-quote-message]. -->
+<script>
+(function(){
+  // 1) Sticky-on-scroll-up header (restored 2026-07-03, later the same day): hide the header while
+  //    scrolling down, reveal it on scroll-up, add a shadow once it has actually left its resting
+  //    spot. A small dead-zone (4px) avoids flicker on tiny scroll jitter. rAF-throttled.
+  (function(){
+    var nav = document.querySelector('.site-nav');
+    if(!nav) return;
+    var lastY = window.scrollY, headerH = nav.offsetHeight, ticking = false;
+    function onScroll(){
+      var y = window.scrollY;
+      if(y > headerH){
+        nav.classList.add('nav-scrolled');
+        if(y > lastY + 4){ nav.classList.add('nav-hide'); }
+        else if(y < lastY - 4){ nav.classList.remove('nav-hide'); }
+      } else {
+        nav.classList.remove('nav-scrolled');
+        nav.classList.remove('nav-hide');
+      }
+      lastY = y;
+      ticking = false;
+    }
+    window.addEventListener('scroll', function(){
+      if(!ticking){ requestAnimationFrame(onScroll); ticking = true; }
+    }, {passive:true});
+  })();
+  // 2) Any CTA marked data-focus-quote scrolls to the hero address box and focuses the input.
+  document.querySelectorAll('[data-focus-quote]').forEach(function(a){
+    a.addEventListener('click', function(e){
+      var box=document.getElementById('get-quote'); if(!box) return;
+      e.preventDefault();
+      box.scrollIntoView({behavior:'smooth', block:'center'});
+      var inp=box.querySelector('input');
+      if(inp) setTimeout(function(){ inp.focus({preventScroll:true}); }, 420);
+    });
+  });
+  // 3) Scroll reveals: on first entry each section's .inner rises + fades once. Hero excluded
+  //    (already visible on load). No-op under reduced motion (nothing to reveal, CSS never hides
+  //    content in that case) or without IntersectionObserver support (fail open, never stuck hidden).
+  var reduceMotion=window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var revealTargets=document.querySelectorAll('section:not(.hero)');
+  if(revealTargets.length&&!reduceMotion){
+    if('IntersectionObserver' in window){
+      var revealIO=new IntersectionObserver(function(entries){
+        entries.forEach(function(entry){
+          if(entry.isIntersecting){
+            entry.target.classList.add('in-view');
+            revealIO.unobserve(entry.target);
+          }
+        });
+      // Trigger deeper into the scroll so the fade/rise is visibly IN PROGRESS as a section
+      // arrives, not already finished. The negative bottom rootMargin pulls the effective viewport
+      // bottom up by 15%, so a section must scroll a bit into view before it counts as
+      // entered; the 0.3 threshold then needs a third of that (reduced) box filled. (2026-07-03)
+      },{threshold:0.2, rootMargin:'0px 0px -10% 0px'});
+      revealTargets.forEach(function(t){ revealIO.observe(t); });
+    } else {
+      revealTargets.forEach(function(t){ t.classList.add('in-view'); });
+    }
+  }
+  // 4) PLACEHOLDER submit. No backend in this prototype, so it never pretends to price or capture.
+  document.querySelectorAll('form[data-quote-component]').forEach(function(f){
+    f.addEventListener('submit', function(e){
+      e.preventDefault();
+      var m=f.querySelector('[data-quote-message]');
+      if(m){
+        m.textContent='You\'re on the list, we\'ll reach out the moment quotes go live.';
+        m.classList.remove('show');
+        requestAnimationFrame(function(){
+          requestAnimationFrame(function(){ m.classList.add('show'); });
+        });
+      }
+    });
+  });
+})();
+</script>
+
+<!-- ===== DECIBEL DUEL behavior (rebuilt 2026-07-02, 6th pass, vanilla; native range = mouse +
+     touch + keyboard for free). ONE color per tick, --duel-color, written once and read by both
+     the circle fill and every ring border/glow via CSS var inheritance, so fill and ring can never
+     drift apart. A 5-stop piecewise-linear ramp (verified checkpoints: 60 green, 69 olive, 78
+     gold/tan, 86 orange, 95 red) makes the color continuous across the whole drag, not a hard
+     swatch swap. Ring count/spacing/shape are also continuous functions of t, recomputed on every
+     input event. The caption is the ONLY descriptive text (no label near the handle) and STEPS
+     exactly AT each labeled round number (65/70/75/80/85/90/95, exact lookup, no early offset),
+     only retriggering its crossfade when the text actually changes. The circle itself gets a
+     literal jitter, scoped to 85-95 dB via a class that only ever exists at v>=85, with amplitude
+     and speed both eased so 85 is barely-there and 95 is most violent. Same 0.125px to 1.05px
+     strength as the prior build, just stretched across a wider window so the climb is slower. -->
+<script>
+(function(){
+  var range=document.querySelector('[data-duel-range]');
+  if(!range) return;
+  var stage=document.querySelector('[data-duel-stage]');
+  var circle=document.querySelector('[data-duel-circle]');
+  var db=document.querySelector('[data-duel-db]');
+  var caption=document.querySelector('[data-duel-caption]');
+  var rings=[
+    document.querySelector('.duel-ring.r1'),
+    document.querySelector('.duel-ring.r2'),
+    document.querySelector('.duel-ring.r3')
+  ];
+
+  // Color ramp: piecewise-linear through the four verified checkpoints, so every intermediate
+  // dB value gets its own exact-blend color rather than snapping between fixed swatches.
+  var STOPS=[
+    {v:60, c:[46,176,105]},   // clean, saturated green
+    {v:69, c:[122,142,74]},   // muted olive, green pulling toward brown/gold
+    {v:78, c:[199,150,58]},   // warm gold/tan
+    {v:86, c:[214,96,44]},    // orange
+    {v:95, c:[196,46,46]}     // solid, saturated red
+  ];
+  function colorAt(v){
+    for(var i=0;i<STOPS.length-1;i++){
+      var a=STOPS[i], b=STOPS[i+1];
+      if(v<=b.v){
+        var t=(v-a.v)/(b.v-a.v);
+        return [
+          Math.round(a.c[0]+(b.c[0]-a.c[0])*t),
+          Math.round(a.c[1]+(b.c[1]-a.c[1])*t),
+          Math.round(a.c[2]+(b.c[2]-a.c[2])*t)
+        ];
+      }
+    }
+    return STOPS[STOPS.length-1].c;
+  }
+
+  // Kevin's finalized 8-value ladder. FINAL TIMING (2026-07-02): each caption triggers exactly AT
+  // its labeled round number, not before it. An earlier "2 dB early" version (63/68/73/78/83/88/93)
+  // was a miscommunication and is fully replaced by the thresholds below. Checked highest first so
+  // the first match wins.
+  var THRESHOLDS=[
+    {at:95, text:'Gas Crew<span class="lb">.</span> <br class="mbr">You Close the Windows'},
+    {at:90, text:'Harley Davidson <br class="mbr">in Your Driveway'},
+    {at:85, text:'NYC Traffic'},
+    {at:80, text:'OSHA Hearing <br class="mbr">Protection Required'},
+    {at:75, text:'Vacuum Cleaner'},
+    {at:70, text:'Quiet Hair Dryer'},
+    {at:65, text:'Getting Warmer'}
+  ];
+  var DEFAULT_CAPTION='Dune Runner<span class="lb">.</span> <br class="mbr">A Quiet Conversation';   // 60-64 dB, the rest state
+  function captionAt(v){
+    for(var i=0;i<THRESHOLDS.length;i++){
+      if(v>=THRESHOLDS[i].at) return THRESHOLDS[i].text;
+    }
+    return DEFAULT_CAPTION;
+  }
+  function setCaption(text){
+    if(caption.dataset.cur===text) return;
+    caption.dataset.cur=text;
+    caption.innerHTML=text;
+    caption.classList.remove('show');
+    void caption.offsetWidth;               // force reflow so the fade-in actually retriggers
+    caption.classList.add('show');
+  }
+
+  function update(){
+    var v=parseFloat(range.value);
+    var t=(v-60)/(95-60);
+    var c=colorAt(v);
+    var color='rgb('+c[0]+','+c[1]+','+c[2]+')';
+
+    stage.style.setProperty('--duel-color', color);
+    stage.style.setProperty('--duel-glow', (14+t*6).toFixed(0)+'px');
+    stage.style.setProperty('--duel-dur', (2.6-(2.6-1.1)*t).toFixed(2)+'s');
+    db.textContent=Math.round(v);
+
+    // Ring geometry: one soft, wide, diffuse ring at rest; spacing tightens and two more rings
+    // fade in continuously as t rises; a slight, static (non-shaking) shape irregularity grows
+    // on the outer rings toward the loud end to read as "energetic" without moving the layout.
+    var base=104, gap=40-(40-22)*t;
+    var sizes=[base+gap*1.7, base+gap*2.9, base+gap*4.1];
+    var opac=[
+      0.68+0.32*t,  // 2026-07-03: was 0.5+0.3*t; the resting ring read as barely-there against the
+                    // new light background, so the floor is raised (0.5 to 0.68 at rest)
+      Math.max(0,Math.min(1,(t-0.15)/0.4))*0.65,
+      Math.max(0,Math.min(1,(t-0.45)/0.4))*0.6
+    ];
+    var blobs=[
+      [1+t*0.02, 1-t*0.02, 1+t*0.015, 1-t*0.02],
+      [1+t*0.06, 1-t*0.05, 1+t*0.04,  1-t*0.06],
+      [1-t*0.08, 1+t*0.07, 1-t*0.06,  1+t*0.08]
+    ];
+    rings.forEach(function(ring,i){
+      ring.style.width=sizes[i]+'px';
+      ring.style.height=sizes[i]+'px';
+      ring.style.opacity=opac[i];
+      var b=blobs[i];
+      ring.style.borderRadius=
+        (50*b[0])+'% '+(50*b[1])+'% '+(50*b[2])+'% '+(50*b[3])+'% / '+
+        (50*b[1])+'% '+(50*b[0])+'% '+(50*b[3])+'% '+(50*b[2])+'%';
+      ring.style.filter = i===0 ? 'blur('+((1-t)*1.3).toFixed(1)+'px)' : 'none';
+      // 2026-07-03: was *2.4 (max 2.4px blur at rest); too soft-focus on the new light background,
+      // washing the ring out instead of reading as a glow. Crisper now, the box-shadow above
+      // supplies the actual glow softness instead.
+    });
+
+    // 85-95 dB only: a small, fast, literal jitter on the circle itself, the class is only ever
+    // present at v>=85 so nothing shakes below it. Amplitude AND speed both ramp on an eased
+    // curve (not linear) so 85 reads as barely-there and every dB above it is visibly more
+    // agitated than the last, most violent right at 95, rather than one flat intensity for all
+    // eleven values. FIFTH CORRECTION (2026-07-02): same floor/peak strength as before, just
+    // stretched across a wider window (85-95 instead of 91-95) so the climb reads slower.
+    if(v>=85){
+      var shakeT=Math.max(0,Math.min(1,(v-85)/10));   // 85 -> 0, 95 -> 1
+      var eased=Math.pow(shakeT,1.6);                 // slow to start, sharpens near the top
+      var amp=0.125+eased*0.925;                       // 0.125px floor at 85 -> 1.05px peak at 95, unchanged
+      var dur=0.17-eased*0.075;                        // 170ms (gentler) at 85 -> 95ms (frantic) at 95
+      circle.style.setProperty('--shake-amt',amp.toFixed(2));
+      circle.style.setProperty('--shake-dur',dur.toFixed(3)+'s');
+      circle.classList.add('shaking');
+    } else {
+      circle.classList.remove('shaking');
+    }
+
+    setCaption(captionAt(v));
+    range.setAttribute('aria-valuetext', Math.round(v)+' decibels. '+captionAt(v).replace(/<[^>]+>/g,' '));
+  }
+  range.addEventListener('input', update);
+  update();
+})();
+</script>
+
+<!-- ===== STRUCTURED DATA (JSON-LD) ===============================================================
+     LocalBusiness + Service. NAP byte-identical to "Dune Runner Electric Lawn Care".
+     telephone is the PLACEHOLDER (904) 555-0123 until the real Twilio number exists.
+     geo is an approximate Neptune Beach centroid (refine to the verified point at launch).
+     openingHoursSpecification and priceRange are intentionally OMITTED: Kevin's decisions are
+     no published hours and no prices on the website (the GBP carries hours; the estimator
+     carries price). Both are one-block adds later if that ever changes.
+     sameAs is left empty on purpose: a link to a not-yet-live profile is worse than none. Add
+     the GBP/Facebook/Instagram/Yelp/Foursquare/Nextdoor URLs here once those profiles exist.
+     Validate with Google's Rich Results Test before launch. -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "@id": "https://dunerunnerlawns.com/#business",
+  "name": "Dune Runner Electric Lawn Care",
+  "alternateName": "Dune Runner",
+  "url": "https://dunerunnerlawns.com/",
+  "telephone": "+1-904-555-0123",
+  "email": "quotes@dunerunnerlawns.com",
+  "image": "https://dunerunnerlawns.com/website-assets/og-image.png",
+  "logo": "https://dunerunnerlawns.com/brand/dune-runner-logo.png",
+  "description": "Quiet, all-electric residential lawn care for small beach lawns on the Jacksonville barrier island. Owner-operated by a Neptune Beach resident since 2016. Mowing, edging, and blowing with commercial-grade electric equipment. Neighbor- and pet-friendly.",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Neptune Beach",
+    "addressRegion": "FL",
+    "postalCode": "32266",
+    "addressCountry": "US"
+  },
+  "geo": { "@type": "GeoCoordinates", "latitude": 30.315, "longitude": -81.398 },
+  "areaServed": [
+    { "@type": "City", "name": "Atlantic Beach", "sameAs": "https://en.wikipedia.org/wiki/Atlantic_Beach,_Florida" },
+    { "@type": "City", "name": "Neptune Beach", "sameAs": "https://en.wikipedia.org/wiki/Neptune_Beach,_Florida" },
+    { "@type": "City", "name": "Jacksonville Beach", "sameAs": "https://en.wikipedia.org/wiki/Jacksonville_Beach,_Florida" },
+    { "@type": "Place", "name": "Mayport, FL" }
+  ],
+  "founder": { "@type": "Person", "name": "Kevin Martin" },
+  "knowsAbout": ["Electric lawn mowing", "Lawn edging", "Leaf blowing and cleanup"],
+  "sameAs": []
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "serviceType": "Electric lawn care",
+  "provider": { "@id": "https://dunerunnerlawns.com/#business" },
+  "areaServed": [
+    { "@type": "City", "name": "Atlantic Beach" },
+    { "@type": "City", "name": "Neptune Beach" },
+    { "@type": "City", "name": "Jacksonville Beach" },
+    { "@type": "Place", "name": "Mayport, FL" }
+  ],
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "Lawn services",
+    "itemListElement": [
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Lawn mowing" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Lawn edging and trimming" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Blowing and cleanup" } }
+    ]
+  }
+}
+</script>
+<!-- OPTIONAL FAQPage JSON-LD. Mirrors the visible FAQ. Google retired FAQ rich results
+     (2026-05-07), so expect no stars/dropdowns in Search; kept because it is harmless and may
+     help AI answer engines parse the answers. Delete this block if you prefer not to ship it. -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    { "@type": "Question", "name": "Is battery power enough for Florida grass?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. Our equipment effortlessly powers through any type of grass, whether it's St. Augustine, Zoysia, or Bermuda, and the cut looks just as good, often better than gas." } },
+    { "@type": "Question", "name": "What does lawn service cost?", "acceptedAnswer": { "@type": "Answer", "text": "Every lawn is a little different, so we do not post one flat price. Type your address for an instant estimate, and the in-person price always lands at or below it." } },
+    { "@type": "Question", "name": "Do I need a contract?", "acceptedAnswer": { "@type": "Answer", "text": "No. Pricing stays the same year-round, we just visit more often in the summer growing season and less in winter, and you can cancel anytime with 24 hours notice." } },
+    { "@type": "Question", "name": "What if it rains on my day?", "acceptedAnswer": { "@type": "Answer", "text": "Your visit is moved a day or two and confirmed by text. A visit is never simply lost." } },
+    { "@type": "Question", "name": "Do I need to be home?", "acceptedAnswer": { "@type": "Answer", "text": "No. A gate code or a side-yard note in your booking covers it." } },
+    { "@type": "Question", "name": "Is it safe for pets and kids right after?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. Nothing is sprayed and nothing is burned, so the lawn is ready to use the moment the gear is packed up." } }
+  ]
+}
+</script>
+
+<!-- DEV-ONLY width ruler. Add #dev to the URL to show it. Never ships. -->
+<div id="vw-readout"></div>
+<script>
+(function(){
+  if(!location.hash.includes('dev')) return;
+  var el=document.getElementById('vw-readout');
+  el.style.cssText='position:fixed;bottom:10px;right:10px;z-index:9999;background:#0A1626;color:#fff;font:600 13px Barlow,sans-serif;padding:6px 11px;border-radius:6px;opacity:.85;pointer-events:none';
+  function u(){el.textContent=window.innerWidth+' px wide';}
+  u();window.addEventListener('resize',u);
+})();
+</script>
+<!-- DEV-ONLY phone preview. Add #phone to the URL to see the real mobile layout in a phone frame. Never ships. -->
+<script>
+(function(){
+  if(!location.hash.includes('phone')) return;
+  var s=document.createElement('style');
+  s.textContent='body>section,body>footer,body>header{display:none!important}'
+    +'body{background:#1b2733!important;max-width:none!important;box-shadow:none!important;margin:0!important}';
+  document.head.appendChild(s);
+  var wrap=document.createElement('div');
+  wrap.style.cssText='position:fixed;inset:0;display:flex;flex-direction:column;'
+    +'align-items:center;justify-content:center;gap:14px;z-index:99999;font-family:Barlow,sans-serif';
+  var cap=document.createElement('div');
+  cap.style.cssText='color:#cfd8e0;font-size:13px;font-weight:600;letter-spacing:.02em';
+  cap.textContent='Mobile preview, 390px wide';
+  var frame=document.createElement('div');
+  frame.style.cssText='width:414px;height:868px;max-height:92vh;background:#0a0f15;'
+    +'border-radius:46px;padding:12px;box-shadow:0 30px 80px rgba(0,0,0,.5)';
+  var ifr=document.createElement('iframe');
+  ifr.src=location.href.split('#')[0];  // same file, no hash -> renders at mobile width, no recursion
+  ifr.style.cssText='width:100%;height:100%;border:0;border-radius:34px;background:#fff';
+  frame.appendChild(ifr);wrap.appendChild(cap);wrap.appendChild(frame);
+  document.body.appendChild(wrap);
+})();
+</script>
+</body>
+</html>
